@@ -2,14 +2,13 @@ package main
 
 import "fmt"
 
-func isValid(str string) bool {
-	charMap := map[byte]byte{
+func isValid(s string) bool {
+	charMap := map[rune]rune{
 		'(': ')',
 		'[': ']',
 		'{': '}',
 	}
-	stack := []byte{}
-	s := []byte(str)
+	stack := []rune{}
 	for _, char := range s {
 		if _, ok := charMap[char]; ok {
 			stack = append(stack, char)
